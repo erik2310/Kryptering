@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -5,11 +7,15 @@ public class Main {
         Kryptering kryptering = new Kryptering();
         Dekryptering dekryptering = new Dekryptering();
 
-        kryptering.encrypt("Hello World!");
+        Scanner scanner = new Scanner(System.in);
+
+        String besked = scanner.nextLine();
+
+        kryptering.encrypt(besked);
         System.out.println(kryptering.getOutput());
 
 
         dekryptering.deencrypt(kryptering.getOutput());
         System.out.println(dekryptering.getOutput());
-         }
+    }
 }
